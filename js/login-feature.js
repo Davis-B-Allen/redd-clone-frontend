@@ -56,7 +56,7 @@ function generateLoginForm (e) {
 }
 
 function submitLogin(email, password) {
-  fetch(`http://localhost:8080/login`, {
+  fetch(`http://dba-docker-test-api-gateway.cfapps.io/login`, {
     method: 'POST',
     headers:{
       'Accept': 'application/json',

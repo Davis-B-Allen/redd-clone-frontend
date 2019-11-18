@@ -25,7 +25,7 @@ fetchAPI();
 
 //fetches the post API
 function fetchAPI () {
-    fetch(`http://localhost:8080/post/list`, {
+    fetch(`http://dba-docker-test-api-gateway.cfapps.io/post/list`, {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'}})
@@ -225,7 +225,7 @@ signUpBtn.addEventListener('click', function(e) {
 function submitSignUp(emailInput, usernameInput, passwordInput) {
   // console.log(emailInput, usernameInput, passwordInput);
 
-  fetch(`http://localhost:8080/signup`, {
+  fetch(`http://dba-docker-test-api-gateway.cfapps.io/signup`, {
     method: 'POST',
     headers:{
       'Accept': 'application/json',
@@ -306,7 +306,7 @@ createPostBtn.addEventListener('click', function(e) {
     let token = sessionStorage.getItem('token');
     let description = postDescription.value;
     
-    fetch(`http://localhost:8080/post`, {
+    fetch(`http://dba-docker-test-api-gateway.cfapps.io/post`, {
       method: 'POST',
       headers:{
         'Accept': 'application/json',
@@ -343,7 +343,7 @@ function postStyling(postOwner, title, description) {
 }
 
 function getComments (id) {
-  fetch(`http://localhost:8080/post/${id}/comment`, {
+  fetch(`http://dba-docker-test-api-gateway.cfapps.io/post/${id}/comment`, {
     headers:{
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -398,7 +398,7 @@ function postComments (e) {
   let commentText = document.querySelector('#textarea-text');
   console.log(currentPostID);
 
-  fetch(`http://localhost:8080/comment/${currentPostID}`, {
+  fetch(`http://dba-docker-test-api-gateway.cfapps.io/comment/${currentPostID}`, {
     method: 'POST',
     headers:{
       'Accept': 'application/json',
@@ -445,7 +445,7 @@ function deleteComments (e) {
   let token = sessionStorage.getItem('token');
   //let commentText = document.querySelector('#textarea-text').value;
   console.log("comments", e.target.dataset.id);
-  fetch(`http://localhost:8080/comment/${e.target.dataset.id}`, {
+  fetch(`http://dba-docker-test-api-gateway.cfapps.io/comment/${e.target.dataset.id}`, {
     method: 'DELETE',
     headers:{
       'Accept': 'application/json',
@@ -504,7 +504,7 @@ function createButton (id, innerText, className) {
 
 function getProfile () {
   // paginationBtn.remove();
-  fetch(`http://localhost:8080/profile`, {
+  fetch(`http://dba-docker-test-api-gateway.cfapps.io/profile`, {
     method: 'GET',
     headers:{
       'Accept': 'application/json',
@@ -521,7 +521,7 @@ function getProfile () {
 
 function createProfile(email, mobile, address) {
   
-  fetch(`http://localhost:8080/profile`, {
+  fetch(`http://dba-docker-test-api-gateway.cfapps.io/profile`, {
     method: 'POST',
     headers:{
       'Accept': 'application/json',
@@ -647,7 +647,7 @@ function updateProfileForm() {
 }
 
 function updateProfile(email, mobile, address) {
-  fetch(`http://localhost:8080/profile`, {
+  fetch(`http://dba-docker-test-api-gateway.cfapps.io/profile`, {
     method: 'POST',
     headers:{
       'Accept': 'application/json',
